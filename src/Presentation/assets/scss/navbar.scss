@@ -1,0 +1,8 @@
+.navbar{
+    .nav-icon{
+        transition: 3000ms ease-in linear;
+        &:hover{
+            color: $misc-color; 
+        }
+    }
+}

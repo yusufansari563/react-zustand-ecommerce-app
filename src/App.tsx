@@ -1,26 +1,34 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import UserProfile from './Presentation/scene/Profile/UserProfile';
+import Chat from './Presentation/scene/chat/Chat';
+import Cart from './Presentation/scene/Cart/Cart';
+import Login from './Presentation/scene/Auth/Login';
+import ProtectedRoute from './Presentation/utils/ProtectedRoute';
+import Loader from './Presentation/components/Loader/Loader';
+import SingleProduct from './Presentation/scene/singleProduct/SingleProduct';
 
-function App() {
+const Product = React.lazy(
+  () => import('./Presentation/scene/Product/product')
+);
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Suspense fallback={<Loader />}>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/login' element={<Login />} />
+          <Route path={'/'} element={<ProtectedRoute />}>
+            <Route path='/' element={<Product />} />
+            <Route path='/user' element={<UserProfile />} />
+            <Route path='/chat' element={<Chat />} />
+            <Route path='/cart' element={<Cart />} />
+            <Route path='/product/:id' element={<SingleProduct />} />
+          </Route>
+        </Routes>
+      </BrowserRouter>
+    </Suspense>
   );
-}
+};
 
 export default App;
