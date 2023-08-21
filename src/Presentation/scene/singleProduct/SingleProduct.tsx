@@ -1,6 +1,5 @@
 import React from 'react';
 import { useStore } from '../../../Service';
-import ProductComponent from '../../components/Product';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Product } from '../../../Domain/Models/Product';
 

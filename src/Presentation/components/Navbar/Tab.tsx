@@ -1,13 +1,12 @@
 import React from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useStore } from '../../../Service';
-import SideNavBar from './SideNavBar';
 
-function Tab() {
+const Tab: React.FC = () => {
   const count = useStore((state) => state.cart);
 
   return (
-    <div className='w-full mx-auto justify-center fixed bottom-2 justify-center left-0 navbar'>
+    <div className='w-full mx-auto fixed bottom-2 justify-center left-0 navbar'>
       <div className='border border-gray-300 py-3 flex gap-1 shadow-xl rounded-md dark:bg-gray-800 w-min mx-auto'>
         <div className='group relative px-4 cursor-pointer'>
           <Link to={'/'}>
@@ -103,6 +102,6 @@ function Tab() {
       </div>
     </div>
   );
-}
+};
 
 export default Tab;

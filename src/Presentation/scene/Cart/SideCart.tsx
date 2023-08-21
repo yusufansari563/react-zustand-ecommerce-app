@@ -1,5 +1,4 @@
 import React from 'react';
-import CartProduct from '../../components/CartProduct';
 
 function SideCart() {
   return (

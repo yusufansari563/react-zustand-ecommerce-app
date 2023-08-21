@@ -1,6 +1,5 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useStore } from '../../../Service';
-import { useNavigate } from 'react-router-dom';
 import useAuth from '../../Hooks/useAuth';
 
 const NavBar = () => {

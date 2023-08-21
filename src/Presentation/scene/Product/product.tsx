@@ -4,29 +4,18 @@ import { useStore } from '../../../Service';
 import { DATA_STATE } from '../../../Service/Utils/dataState';
 import Loader from '../../components/Loader/Loader';
 import ProductComponent from '../../components/Product';
-import Cart from '../Cart';
 import { Product as ProductModel } from '../../../Domain/Models/Product';
-import { Link } from 'react-router-dom';
-
-interface items {
-  item: ProductModel;
-  index: number;
-  rating: number;
-  count: number;
-}
 
 export default function Product() {
   const loading = useStore((state) => state.loading);
   const productList = useStore((state) => state.product);
   const setProductStore = useStore((state) => state.setProduct);
 
-  const getProduct = async () => {
-    // const product = await ProductGet();
-  };
   React.useEffect(() => {
     ProductGet().then((product) => {
       setProductStore(product);
     });
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   switch (loading) {

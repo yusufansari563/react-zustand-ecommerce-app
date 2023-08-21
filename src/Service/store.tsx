@@ -1,6 +1,5 @@
-import { devtools } from '@pavlobu/zustand/middleware';
 import create from 'zustand';
-import ProductRepository, {
+import  {
     addSameProdInCart,
     addToCart,
     deleteFromCart, Login, Logout,

@@ -1,6 +1,4 @@
-import React, { useEffect } from 'react';
-import { useStore } from '../../Service';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import NavBar from '../components/Navbar/NavBar';
 import SideNavBar from '../components/Navbar/SideNavBar';

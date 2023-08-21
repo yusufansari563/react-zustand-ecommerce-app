@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 import { useStore } from '../../../Service';
-import { useNavigate } from 'react-router-dom';
-import useNotification from '../../Hooks/useNotification';
 
 function UserProfile() {
   const loggedUser = useStore((state) => state.login);
@@ -9,7 +7,6 @@ function UserProfile() {
   const [id, setId] = useState(loggedUser.id);
   const [pass, setPass] = useState(loggedUser.password);
   const [notification, setNotification] = useState(false);
-  const navigate = useNavigate();
 
   return (
     <>

@@ -1,8 +1,7 @@
-import { type } from 'os';
 import React from 'react';
 
 function useNotification(title: string) {
-    
+
   return (
     <div
       id='toast-default'
